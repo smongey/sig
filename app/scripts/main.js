@@ -124,7 +124,7 @@ $(window).on('resize', function(){
   setIntroHeight();
 });
 
-if(location.pathname == "/") {
+if(location.pathname == "/" || location.pathname == "/sig/") {
   $(window).on('scroll.logo', function(){
     logoAnim();
     console.log('root');
