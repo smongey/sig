@@ -34,23 +34,16 @@
             </nav>
         </div>
 
-        <div class="col-3 logo"> 
-           <img src="images/logo.svg" alt="">
-        </div>
-
+        <div class="col-3 logo" id="logo"></div>
         
-     <div class="col-4 dropdown">
-        <dl class="dropdown ">
-            <dt><a><span>Search By</span></a></dt>
-                <dd>
-                    <ul>
-                        <li><a class="default">Search By</a></li>
-                        <li class="option"><a href="tags.html">Bouquet of Lillies</a></li>
-                        <li class="option"><a href="tags.html">Bouquet of Roses</a></li>
-                    </ul>
-                </dd>
-        </dl>
-    </div>
+        <div class="col-4 dropdown">
+            <li><a class="drop" href="#">Search by<span></span></a>
+                <ul class="menu closed">
+                    <li><a class="option" href="tags.html">Option One</a></li>
+                    <li><a class="option" href="tags.html">Option Two</a></li>
+                </ul>
+            </li>
+        </div>
 
     </header>  
 
@@ -200,6 +193,9 @@
         <!-- build:js scripts/vendor.js -->
         <!-- bower:js -->
         <script src="bower_components/jquery/jquery.js"></script>
+        <script src="bower_components/jquery-easing/jquery.easing.min.js"></script>
+        <script src="bower_components/swipe/swipe.js"></script>
+        <script src="bower_components/raphael/raphael-min.js"></script>
         <!-- endbower -->
         <!-- endbuild -->
 
