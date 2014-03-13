@@ -1,13 +1,25 @@
 /* Setup, Resets & Variables */
 @import "logo";
 @import "compass/reset";
+@import url("//fnt.webink.com/wfs/webink.css/?project=D62793EE-0259-482E-87C2-97C8FD454213&fonts=BF522E13-B921-2C59-5FD3-9D3C689FC32B:f=Theinhardt-LightIta,82DA4627-8191-9CE4-706C-58F3C2615A95:f=Theinhardt-Bold,008579D7-00D8-1E34-1306-843EC6BC82EA:f=Theinhardt-Light,8B459781-89CC-B7EA-6A87-7EC561303F45:f=Theinhardt-BoldIta,BA766C3D-9F83-4950-AFCD-AD9F2BF5CEAB:f=Theinhardt-Regular,DC84A178-A66C-DB8D-5140-7E5BF64AB28F:f=Theinhardt-RegularIta");
+/*
+Theinhardt-Light
+Theinhardt-LightIta
+Theinhardt-Regular
+Theinhardt-RegularIta
+Theinhardt-Bold
+Theinhardt-BoldIta
+*/
 
 $pink: #C227B9;
 $grey: #888888;
-$lgrey: #B3B3B3;
+$lgrey: #999999;
+
+::selection { background: lighten($pink, 45%); }
+::-moz-selection { background: lighten($pink, 45%); }
 
 *, *:after, *:before { margin: 0px; padding: 0px; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
-body { font: 16px 'Gill Sans', sans-serif; font-weight: lighter; -webkit-font-smoothing: antialiased; }
+body {  font: 17px/24px 'Theinhardt-Light','Gills Sans', sans-serif; -webkit-font-smoothing: antialiased; }
 a { text-decoration: none; }
 
 .main-content {
@@ -18,12 +30,12 @@ a { text-decoration: none; }
 
 .wrapper {
   position: relative;
-  padding: 0 12%;
+  padding: 0 8%;
   padding-bottom: 60px;
   margin: 0 auto;
   z-index: 9999;
   @media all and (max-width: 1200px) {
-    padding: 0 5%;
+    padding: 0 50px;
   }
 }
 
@@ -44,9 +56,7 @@ a { text-decoration: none; }
 
 header {
   height: 280px;
-  padding: 60px;
-  padding-left: 8%;
-  padding-right: 8%;
+  padding: 60px 0px;
 }
 .scroll-down { 
   position: fixed;
@@ -65,20 +75,10 @@ header {
   }
 }
 
-.main-nav ul li {
-  display: inline;
-  font-size: 16px;
-  text-transform: uppercase;
-}
-
 .main-nav, footer {
   ul li {
     list-style: none;
   }
-}
-
-footer {
-  background: $pink;
 }
 
 .main-nav {
@@ -87,10 +87,12 @@ footer {
   height: 140px;
   font-weight: normal;
   letter-spacing: 1px;
+  padding-left: 40px;
   ul li {
     margin-right: 10px;
     position: relative;
     display: inline-block;
+    text-transform: uppercase;
     &:after {
       content: '';
       position: absolute;
@@ -98,7 +100,7 @@ footer {
       height: 1px;
       background:$pink;
       left:0px;
-      top:20px;
+      top:23px;
       transition: all ease 0.2s;
       opacity: 0;
     }
@@ -109,25 +111,37 @@ footer {
   a { color: $lgrey; }
 }
 
-
 .flower-image {
   position: relative;
+  //min-width: 320px;
 }
-
+a .details { color:#000; }
 .details {
   position: absolute;
-  bottom: 0px;
-  background: #fff;
+  background: rgba(255,255,255,1);
   text-align: center;
-  margin: 40px;
-  margin-bottom: 55px;
-  padding: 30px;
+  padding: 15px;
+  top:0px;
+  width:220px;
+  height:220px;
+  left:calc(50% - 110px);
+  top:calc(50% - 125px);
+  display: table;
+  transition:all ease 0.3s;
+  div, span, h2, p { display: table-cell; vertical-align: middle; }
+  .title { background:rgba(255,0,0,0); width:100%; height:50%; display: table; transition:all ease 0.3s; }
+  hr { background:$grey; height:1px; border: none; }
+  .price { background:rgba(0,0,255,0); width:100%; height:50%; display: table; color: $lgrey; transition:all ease 0.3s;  }
+  &.hide { opacity: 0;
+    .title, .price { height:45%; }
+  }
+  &:hover { 
+    //hr { background:$pink; }
+  }
 }
 
 h2, p {
-  font: 16px 'Gill Sans', sans-serif;
-  font-weight: lighter;
-  line-height: 24px;
+  font: 17px/24px 'Theinhardt-Light','Gills Sans', sans-serif;
   letter-spacing: 0.5px;
 }
 
@@ -148,12 +162,12 @@ footer {
 .social {
   font-size: 13px;
   text-transform: none;
-  ul li { display: inline-block; padding: 10px;
-    &:first-child {
-      &:after {
-          display: block; width: 10px; height: 10px; background: red;
-      }
-    }
+  ul li { display: inline-block; padding: 10px 20px 10px 10px; position: relative; }
+  ul li a { transition:all ease 0.2s; }
+  ul li:first-child a::before { transition:all ease 0.2s; content: ' '; display: block; position: absolute; margin-left:-15px; left:0; border-radius: 3px; background:$lgrey url('../images/social.png') 0 0 no-repeat; width: 20px; height:20px;  }
+  ul li:nth-child(2) a::before { transition:all ease 0.2s; content: ' '; display: block; position: absolute; margin-left:-15px; left:0; border-radius: 3px; background:$lgrey url('../images/social.png') -20px 0 no-repeat; width: 20px; height:20px;  }
+  ul li a:hover { 
+    &::before { background-color: $pink; transition:all ease 0.2s; border-radius: 10px; }
   }
 }
 
@@ -170,6 +184,7 @@ footer {
 
 .logo {
   margin-top: -20px;
+  min-width: 300px;
 }
 
 .logo, .logo-footer {
@@ -186,21 +201,6 @@ footer {
 
 .clear-left {
   clear: left;
-}
-
-// .text-image img {
-
-//   width: 100%;
-
-// }
-
-#about {
-
-// article {
-//   position: relative;
-//   margin-left: 25%;
-// }
-
 }
 
 /* Dropdown */
@@ -221,6 +221,7 @@ $ajust: 1.5em;
   letter-spacing: 1px;
   text-transform: uppercase;
   margin-bottom: 1em;
+  & > li { padding-right: 40px; }
   li { list-style-type: none; 
     a {
         display: block;
@@ -275,43 +276,39 @@ article {
   padding-bottom: 30px;
 
   .title {
-    width: 90px;
+    width: 20%;
+    padding-right: 20px;
     float: left;
   }
 
   h2 {
-    font: 19px 'Gill Sans', sans-serif bold;
-    letter-spacing:1px;
+    font: 17px/24px 'Theinhardt-Bold','Gills Sans', sans-serif;
+    letter-spacing:0.5px;
     color: $pink;
     padding-bottom: 7px;
-    line-height: 28px;
   }
 
   h3 {
-    font: 16px 'Gill Sans', sans-serif;
-    letter-spacing:1px;
+    font: 17px/24px 'Theinhardt-Regular','Gills Sans', sans-serif;
+    letter-spacing:0.5px;
     color: $grey;
     display: block;
     width: 130px;
-    font-weight: lighter;
   }
 
 
   p, img {
-  width: 83%;
+  width: 80%;
   float: right;
   margin-bottom: 24px;
-  font-size: 18px;
-  line-height: 28px;
-  letter-spacing: 0.5px;
   }
 
 a {
-  color: $pink;
-  letter-spacing: 1px;
+  color: #000;
+  letter-spacing: 0.5px;
   padding-bottom: 5px;
   font-size: 16px;
-  border-bottom: solid 1px $pink;
+  border-bottom: solid 1px $lgrey;
 }
 
 
@@ -326,7 +323,7 @@ a {
 // }
 
 .contact-wrap {
-  width: 83%;
+  width: 80%;
   display: inline-block;
   float: right;
   
@@ -334,8 +331,10 @@ a {
     float: left;
     width: 100%;
   }
-
-  
+  h3 { 
+    color:$pink;
+  }
+  a { color:#000; border: none; }
 
 }
 
@@ -343,12 +342,12 @@ a {
   display: inline-block;
   float: left;
   width: 60%; 
-  margin-right: 10%; 
+  padding-right: 30px; 
 }
 .contact-two { 
   display: inline-block;
   float: left;
-  width: 30%; 
+  width: 40%; 
 }
 
 }
