@@ -8,7 +8,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Signature Flowers &mdash; Single</title>
         <meta name="description" content="">
-        <meta name="viewport" content="width=device-width">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
         <!-- build:css(.tmp) styles/main.css -->
         <link rel="stylesheet" href="styles/styles.css">
@@ -37,7 +37,7 @@
 
         <div class="col-3 logo" id="logo"></div>
 
-        <div class="col-4 dropdown">
+        <div class="col-3 dropdown">
             <li><a class="drop" href="#">Search by<span></span></a>
                 <ul class="menu closed">
                     <li><a class="option" href="tags.html">Option One</a></li>
@@ -55,9 +55,18 @@
         <section id="guts">
             <div class="product">
                 <div class="images col-2">
-                    <img src="http://placehold.it/320x420" alt="">
-                    <img src="http://placehold.it/320x420" alt="">
-                    <img src="http://placehold.it/320x420" alt="">
+                    <div id='slider' class='swipe'>
+                        <div class='swipe-wrap'>
+                            <div><img src="http://placehold.it/440x500/ccc" alt=""></div>
+                            <div><img src="http://placehold.it/440x500/ddd" alt=""></div>
+                            <div><img src="http://placehold.it/440x500/333" alt=""></div>
+                        </div>
+                    </div>  
+                    <ul id="slidecount">
+                        <li class="on"></li>
+                        <li class=" "></li>
+                        <li class=" "></li>
+                    </ul>                
                 </div>
 
                 <div class="info col-2">
@@ -134,6 +143,7 @@
         <script src="bower_components/jquery-easing/jquery.easing.min.js"></script>
         <script src="bower_components/swipe/swipe.js"></script>
         <script src="bower_components/raphael/raphael-min.js"></script>
+        <script src='bower_components/fastclick/lib/fastclick.js'></script>
         <!-- endbower -->
         <!-- endbuild -->
 
