@@ -522,6 +522,7 @@ li { cursor: pointer;
 }
 
 @media all and (max-width: 450px){
+  .main-nav ul li { display: inline-block; }
   header div.logo { margin-left:-20px; }
   .product { padding: 0 10px;
     .info { padding:0; }
