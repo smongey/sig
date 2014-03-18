@@ -509,6 +509,7 @@ li { cursor: pointer;
   footer .col-6 { width:30%;
     .pull-right { float:left; }
   }
+  header div.col-3:first-child { width:100%; text-align: center; background: blue; }
   article.about, article.contact { width: 90%; }
   article .title { width: 100%; }
   article p, article img { width: 100%; }
