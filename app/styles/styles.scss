@@ -485,6 +485,7 @@ li { cursor: pointer;
   article.about, article.contact { width: 70%; margin-left: 7%; }
   #guts .col-3 { width: 50%; }
 }
+
 @media all and (max-width: 723px) {
   .dropdown { display: none; }
   .main-nav ul li { display: inline-block; }
@@ -500,6 +501,7 @@ li { cursor: pointer;
     .col-2 { width:100%; }
   }
 }
+
 @media all and (max-width: 600px) {
   #guts .col-3 { width: 100%; }
   .logo-animate { display: none; }
@@ -518,7 +520,8 @@ li { cursor: pointer;
     .info { padding:0; }
   }  
 }
-@media all and (max-width: 450px){
+
+@media all and (max-width: 450px) {
   .main-nav ul li { display: inline-block; }
   header div.logo { margin-left:-20px; }
   .product { padding: 0 10px;
