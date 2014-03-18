@@ -285,20 +285,17 @@ $(window).on('scroll.intro', function(){
   if(location.pathname == "/" || location.pathname == "/sig/") {
     var scrollFromTop = $(window).scrollTop(),
       wHeight = $(window).height(),
-      imgHeight = $('#slideshow img').height();
+      imgHeight = $('#slideshow img').height(),
+      pageFromTop = $('#page').offset().top;
 
-    function hideIntro(elem){
-      if (scrollFromTop > elem) {
+    function hideIntro(){
+      if (scrollFromTop > pageFromTop) {
         $('#intro').hide();
         $(window).scrollTop(0).off('scroll.intro');
       }
-    }    
+    }   
 
-    if (imgHeight > wHeight) {
-      hideIntro(wHeight);
-    } else {
-      hideIntro(imgHeight);
-    }
+    hideIntro();
 
     $('.logo-top').css({
       'margin-top' : -(scrollFromTop / 3),
