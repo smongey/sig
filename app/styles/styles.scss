@@ -1,5 +1,5 @@
+
 /* Setup, Resets & Variables */
-@import "logo";
 @import "compass/reset";
 @import url("//fnt.webink.com/wfs/webink.css/?project=D62793EE-0259-482E-87C2-97C8FD454213&fonts=BF522E13-B921-2C59-5FD3-9D3C689FC32B:f=Theinhardt-LightIta,82DA4627-8191-9CE4-706C-58F3C2615A95:f=Theinhardt-Bold,008579D7-00D8-1E34-1306-843EC6BC82EA:f=Theinhardt-Light,8B459781-89CC-B7EA-6A87-7EC561303F45:f=Theinhardt-BoldIta,BA766C3D-9F83-4950-AFCD-AD9F2BF5CEAB:f=Theinhardt-Regular,DC84A178-A66C-DB8D-5140-7E5BF64AB28F:f=Theinhardt-RegularIta");
 /*
@@ -10,6 +10,76 @@ Theinhardt-RegularIta
 Theinhardt-Bold
 Theinhardt-BoldIta
 */
+
+.logo-animate { position:absolute; width: 90px; height: 90px; transform: translate(-50%, -50%); left: 50%; margin-top: 30px; } 
+.logo-top { position:fixed; width: 200px; height: 200px; transform: translate(-50%, -50%); left: 50%; top: 50%; 
+  background: rgb(255, 255, 255);
+  z-index: 8888;
+  border-radius: 200px;
+} 
+
+.middle { width:90px; height:90px; background:transparent url('../images/inner.svg') center center no-repeat; 
+animation: logoTwirl 10s ease 0s infinite; position:absolute; top:0%; left:0%;
+}
+
+.middle-large { width:130px; height:130px; background:transparent url('../images/inner_large.svg') center center no-repeat; 
+animation: logoTwirl 10s ease 0s infinite; position:absolute; top:0%; left:0%; margin: 35px;
+}
+
+
+.outer { width: 90px; height: 90px; margin:0px; padding:0px; top:0px; left:0px; position:absolute; }
+.outer-large { width: 130px; height: 130px; margin:35px; padding:0px; top:0px; left:0px; position:absolute; }
+
+.one { background: url('../images/outer1.svg'); 
+
+animation: clockWise 10s ease 0 infinite;
+
+}
+
+.two { background:transparent url('../images/outer2.svg');
+  -webkit-animation: counterWise 10s ease 0 infinite;
+} 
+.logo:hover .two { animation: clockWise 5s ease 0 infinite; }
+.logo:hover .one { animation: counterWise 5s ease 0 infinite;
+ } 
+
+
+.one-large {
+background: url('../images/outer1_large.svg'); 
+animation: clockWise 10s ease 0 infinite
+}
+
+.two-large {
+  background:transparent url('../images/outer2_large.svg');
+  -webkit-animation: counterWise 10s ease 0 infinite;
+}
+
+
+@-webkit-keyframes clockWise { 
+  0% { transform: rotate(0deg);} 
+  25% { transform: rotate(90deg); } 
+  50% { transform: rotate(180deg); } 
+  75% { transform: rotate(270deg); } 
+  100% { transform: rotate(360deg); }
+}
+
+
+@-webkit-keyframes counterWise { 
+  0% { transform: rotate(0deg);} 
+  25% { transform: rotate(-90deg);} 
+  50% { transform: rotate(-180deg); } 
+  75% { transform: rotate(-270deg); } 
+  100% { transform: rotate(-360deg); }
+}
+
+@-webkit-keyframes logoTwirl {
+  0% {transform: rotate(0deg);} 
+  25% {transform: rotate(0deg);}
+  50% {transform: rotate(0deg); }
+  75% { transform: rotate(0deg); } 
+  100% { transform: rotate(360deg); }  
+}
+
 
 $pink: #C227B9;
 $grey: #888888;
